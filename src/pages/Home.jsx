@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../css/Home.css';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import ReactMarkdown from "react-markdown";
-import keys from "../config/keys.json" 
+import keys from "../config/keys.json";
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
@@ -16,13 +16,19 @@ const Home = () => {
   const getResponseForGivenPrompt = async () => {
     if (!inputValue.trim()) return;
     
+    const userMessage = { question: inputValue, answer: "loading" };
+    setPromptResponses(prev => [...prev, userMessage]);
+    setInputValue('');
+    setLoading(true);
+    
     try {
-      setInputValue('');
-      setLoading(true);
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-      const result = await model.generateContent(inputValue);
+      const result = await model.generateContent(userMessage.question);
       const response = result.response.text();
-      setPromptResponses(prev => [...prev, { question: inputValue, answer: response }]);
+      
+      setPromptResponses(prev => prev.map((msg, index) => 
+        index === prev.length - 1 ? { ...msg, answer: response } : msg
+      ));
     } catch (error) {
       console.log("Something Went Wrong", error);
     } finally {
@@ -30,15 +36,17 @@ const Home = () => {
     }
   };
 
+  // Enter tuşu ile mesaj gönderme
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       getResponseForGivenPrompt();
     }
   };
 
+  // Yeni mesaj geldiğinde chatbox'ı aşağı kaydırma
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [promptResponses, loading]);
+  }, [promptResponses]);
 
   return (
     <div className="chat-body">
@@ -47,10 +55,11 @@ const Home = () => {
           {promptResponses.map((item, index) => (
             <div key={index} className="message-pair">
               <div className="message user">{item.question}</div>
-              <div className="message bot"><ReactMarkdown className="prose prose-lg">{item.answer}</ReactMarkdown></div>
+              <div className="message bot">
+                {item.answer === "loading" ? <div className="loading">Cevap yükleniyor...</div> : <ReactMarkdown className="prose prose-lg">{item.answer}</ReactMarkdown>}
+              </div>
             </div>
           ))}
-          {loading && <div className="loading">Cevap yükleniyor...</div>}
           <div ref={chatEndRef} />
         </div>
         <div className="input-area">
