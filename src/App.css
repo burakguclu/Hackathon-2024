@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 420px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    margin-left: 500px;
+    width: calc(100% - 500px);
+    padding: 20px;
+    background-color: #fff;
+}

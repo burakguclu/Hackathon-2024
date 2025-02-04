@@ -1,0 +1,158 @@
+.quiz-body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../components/images/quiz.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz {
+    width: 800px;
+    margin: auto;
+    margin-top: 70px;
+    background-color: white;
+    color: #262626;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px 40px;
+}
+
+.quiz hr {
+    height: 2px;
+    border: none;
+    background: #707070;
+}
+
+.quiz h1 {
+    align-self: center;
+    font-size: 32px;
+    margin-bottom: -10px;
+}
+
+.quiz h2 {
+    align-self: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.quiz ul li {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 15px;
+    border: 1px solid #686868;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-left: -30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.quiz button {
+    margin: auto;
+    width: 250px;
+    height: 65px;
+    background: #553faa;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.quiz .index {
+    margin: auto;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.quiz .Doğru {
+    background-color: #dffff2;
+    border-color: #00d397;
+}
+
+.quiz .Yanlış {
+    background-color: #ffebeb;
+    border-color: #ff4a4a;
+}
+
+.quiz-upload-body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../components/images/quiz.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-upload {
+    height: 240px;
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.quiz-upload h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.quiz-upload .input-box {
+    position: relative;
+    width: 83%;
+    height: 10px;
+    margin-bottom: 60px;
+}
+
+.quiz-upload .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #000000;
+    padding: 20px 45px 20px 20px;
+}
+
+.quiz-upload .input-box input::placeholder {
+    color: #000000;
+}
+
+.quiz-upload button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.quiz-upload .hidden-text {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 0 0 15px;
+}

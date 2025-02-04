@@ -1,0 +1,108 @@
+.chat-body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../components/images/home.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-box {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.chat-box {
+    width: 600px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 70vh;
+    background-color: #f7f9fb;
+}
+
+.message {
+    max-width: 75%;
+    margin: 10px 0;
+    padding: 12px 18px;
+    border-radius: 18px;
+    line-height: 1.4;
+    font-size: 1rem;
+}
+
+.message.user {
+    background-color: #4c6ef5;
+    color: #ffffff;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.message.bot {
+    background-color: #e1e6ea;
+    color: #333333;
+    border-bottom-left-radius: 5px;
+}
+
+.loading {
+    font-style: italic;
+    color: #999999;
+}
+
+.input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eaeaea;
+    background-color: #ffffff;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccd5e0;
+    outline: none;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+    margin-right: 10px;
+}
+
+.chat-input:focus {
+    border-color: #4c6ef5;
+}
+
+.send-button {
+    padding: 12px 18px;
+    background-color: #4c6ef5;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.message-pair {
+    margin-bottom: 15px;
+}
+.send-button:hover {
+    background-color: #375aaf;
+}
